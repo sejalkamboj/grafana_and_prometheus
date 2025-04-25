@@ -14,11 +14,21 @@ wget https://github.com/prometheus/node_exporter/releases/download/v1.9.1/node_e
 tar xvfz node_exporter-*.*-amd64.tar.gz
 cd node_exporter-*.*-amd64
 ```
+<p align="center">
+  <img src="https://github.com/sejalkamboj/grafana_and_prometheus/blob/main/images/Screenshot%20(764).png">
+</p>
+
 2. **Run Node Exporter**:
 ```bash
 ./node_exporter
 ```
+<p align="center">
+  <img src="https://github.com/sejalkamboj/grafana_and_prometheus/blob/main/images/Screenshot%20(765).png">
+</p>
 - This starts Node Exporter on `http://localhost:9100`.
+<p align="center">
+  <img src="https://github.com/sejalkamboj/grafana_and_prometheus/blob/main/images/Screenshot%20(769).png">
+</p>
 
 3. **Verify Metrics**:
 - Open in browser: [http://localhost:9100/metrics](http://localhost:9100/metrics)
@@ -33,6 +43,10 @@ cd node_exporter-*.*-amd64
     ```bash
     hostname -I
     ```
+    <p align="center">
+  <img src="https://github.com/sejalkamboj/grafana_and_prometheus/blob/main/images/Screenshot%20(773).png">
+</p>
+   
 - Replace `localhost` with this IP in `prometheus.yml` later.
 
 ---
@@ -71,12 +85,18 @@ scrape_configs:
 ```bash
 docker-compose up -d
 ```
+<p align="center">
+  <img src="https://github.com/sejalkamboj/grafana_and_prometheus/blob/main/images/Screenshot%20(767).png">
+</p>
 
 4. **Verify Prometheus**:
 - Open [http://localhost:9090](http://localhost:9090)
 - Check targets: **Status → Targets** → Ensure `node-exporter` is **UP**.
 
 ---
+<p align="center">
+  <img src="https://github.com/sejalkamboj/grafana_and_prometheus/blob/main/images/Screenshot%20(770).png">
+</p>
 
 ## **3. Set Up Grafana Dashboard**
 Grafana provides visualization for collected metrics.
@@ -84,7 +104,7 @@ Grafana provides visualization for collected metrics.
 ### **Steps:**
 1. **Access Grafana**:
 - Open [http://localhost:3000](http://localhost:3000)
-- Default login: `admin` / `admin`
+- Default login: `admin` / `grafana`
 
 2. **Add Prometheus Data Source**:
 - **Configuration → Data Sources → Add Prometheus**
@@ -97,8 +117,14 @@ Grafana provides visualization for collected metrics.
 
 4. **View Metrics**:
 - The dashboard will now display CPU, memory, disk, and network metrics.
-
+<p align="center">
+  <img src="https://github.com/sejalkamboj/grafana_and_prometheus/blob/main/images/Screenshot%20(771).png">
+</p>
+<p align="center">
+  <img src="https://github.com/sejalkamboj/grafana_and_prometheus/blob/main/images/Screenshot%20(772).png">
+</p>
 ---
+
 
 ## **Troubleshooting**
 - **Connection Issues?**

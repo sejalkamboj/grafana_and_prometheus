@@ -1,8 +1,6 @@
 
 # **Monitoring with Prometheus and Grafana**
 
-[GitHub Repo](https://github.com/upessocs/MonitoringWithPrometheusAndGrafana)
-
 
 ## **1. Install Node Exporter on Linux/WSL/Docker**
 Node Exporter collects system metrics and exposes them for Prometheus.
